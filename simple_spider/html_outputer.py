@@ -11,8 +11,8 @@ class HtmlOurputer:
         self.datas.append(data)
 
     # 输出结果到文件
-    def output_html(self):
-        f = open('output.html', 'w', encoding='utf-8')
+    def output_html(self, output_html):
+        f = open(output_html, 'w', encoding='utf-8')
         f.write('<html>')
         f.write('<body style="background-color:#efefef;">')
         f.write('<table border="1">')

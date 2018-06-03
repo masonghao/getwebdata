@@ -8,7 +8,7 @@ class SpiderMain:
         self.parser = html_parser.HtmlParser()
         self.outputer = html_outputer.HtmlOurputer()
 
-    def doParser(self, root_url, max_count=10):
+    def doParser(self, root_url, max_count=10, output_file='output.html'):
         count = 1
         self.urls.add_new_url(root_url)
         while self.urls.has_new_url():
@@ -25,9 +25,11 @@ class SpiderMain:
                     break
             except:
                 print('parser %d: %s failed.' % (count, new_url))
-        self.outputer.output_html()
+        self.outputer.output_html(output_file)
 
 if __name__ == '__main__':
-    startUrl='https://baike.baidu.com/item/%E6%97%B6%E7%A9%BA/724683'
+    startUrl='https://baike.baidu.com/item/%E4%BA%92%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF/617749'
+    urls_num = 20
+    output_file = 'It_info.html'
     spider = SpiderMain()
-    spider.doParser(startUrl, 20)
+    spider.doParser(startUrl, urls_num, output_file)
