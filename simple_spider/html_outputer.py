@@ -18,7 +18,7 @@ class HtmlOurputer:
         f.write('<table border="1">')
         for data in self.datas:
             f.write('<tr>')
-            f.write('<td title="%s"> %s </td>' % (data['baike_url'], data['baike_title']))
+            f.write('<td><a href="%s" title="%s"> %s </a></td>' % (data['baike_url'], data['baike_url'], data['baike_title']))
             f.write('<td> %s </td>' % data['baike_con'])
             f.write('</tr>')
         f.write('</table>')

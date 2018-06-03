@@ -25,7 +25,7 @@ def parserHtml(fileName):
     print(linksset)
 
 if __name__ == '__main__':
-    url='https://baike.baidu.com/item/html5'
+    url='https://baike.baidu.com/item/%E7%8E%84%E5%B9%BB/1487337'
     fileName = 'data/msong.html'
     # getHtml(url, fileName)
     parserHtml(fileName)
