@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 import url_manager, html_downloader, html_parser, html_outputer
-import urllib.request
+
 class SpiderMain:
     def __init__(self):
         self.urls = url_manager.UrlManager()
@@ -17,7 +17,6 @@ class SpiderMain:
                 print('parser %d: %s' % (count, new_url))
                 html_cont = self.downloader.download(new_url)
                 new_urls, new_data = self.parser.parser(new_url, html_cont)
-                print(new_data)
                 self.urls.add_new_urls(new_urls, max_count)
                 self.outputer.collect_data(new_data)
                 count += 1
@@ -29,13 +28,8 @@ class SpiderMain:
         self.outputer.output_html(output_file)
 
 if __name__ == '__main__':
-    startUrl='http://zu.sh.fang.com/'
-    urls_num = 1
-    output_file = 'fang_info.html'
+    startUrl='https://baike.baidu.com/item/%E6%89%8B%E6%9C%BA%E6%B8%B8%E6%88%8F/1379'
+    urls_num = 50
+    output_file = 'yx_info.html'
     spider = SpiderMain()
     spider.doParser(startUrl, urls_num, output_file)
-
-    # response = urllib.request.urlopen(startUrl)
-    # if response.getcode() == 200:
-    #     text = response.read().decode('gbk', 'ignore').encode('utf-8')
-    # print(text)
