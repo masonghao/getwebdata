@@ -157,6 +157,7 @@ class ZhiLianMain:
         self.outputer.output_html(output_file)
 
 if __name__ == '__main__':
-    start_url='http://sou.zhaopin.com/jobs/searchresult.ashx?bj=160000&sj=864&jl=%E4%B8%8A%E6%B5%B7&sm=0&isfilter=0&fl=538&isadv=0&sg=5afc8f6be3464df48b08c911bc3ad14f&p=39'
+
+    start_url='http://sou.zhaopin.com/jobs/searchresult.ashx?jl=%E4%B8%8A%E6%B5%B7&kw=python&p=1&isadv=0'
     zl = ZhiLianMain()
-    zl.doParser(start_url, 'zhiliantest0.html')
+    zl.doParser(start_url, 'zhilian_qianduan.html')
